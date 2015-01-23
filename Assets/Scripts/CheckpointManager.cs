@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CheckpointManager : MonoBehaviour {
 
-    private Transform checkpoint;
+    public Transform checkpoint;
 
 	// Use this for initialization
 	void Start () {
@@ -14,18 +14,6 @@ public class CheckpointManager : MonoBehaviour {
 	void Update () {
 	    
 	}
-
-
-
-    public void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag != "Player")
-        {
-            return;
-        }
-
-        other.gameObject.transform.position = checkpoint.position;
-    }
 
 
     public void SetCheckpoint(Transform ckpt)

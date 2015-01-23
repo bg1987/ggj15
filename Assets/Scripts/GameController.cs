@@ -5,6 +5,7 @@ public class GameController : MonoBehaviour {
 
 	public PlayerControl player;
 	public MsgsPanel msgsPanel;
+    public CheckpointManager checkpoint;
 
 	enum TutorialState {WelcomeMsg,ControlMsg,Play}
 	TutorialState tutorialState = TutorialState.WelcomeMsg;
@@ -57,6 +58,15 @@ public class GameController : MonoBehaviour {
 		tutorialState= TutorialState.Play;
 		player.controlState= PlayerControl.ControlStates.Free;
 	}
+
+    public void KillPlayer(bool resetVelocity = false)
+    {
+        player.transform.position = checkpoint.checkpoint.position;
+        if (resetVelocity)
+        {
+            player.rigidbody2D.velocity = Vector3.zero;
+        }
+    }
 
 	// Update is called once per frame
 	void Update () {

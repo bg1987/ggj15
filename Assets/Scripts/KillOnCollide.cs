@@ -15,7 +15,12 @@ public class KillOnCollide : MonoBehaviour {
 
     public void OnCollisionEnter2D(Collision2D coll)
     {
-        Destroy(coll.collider.gameObject);
+        if (coll.gameObject.tag != "Player")
+        {
+            return;
+        }
+
+        Camera.main.GetComponent<GameController>().KillPlayer(true);
     }
 
 
