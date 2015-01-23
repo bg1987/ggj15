@@ -16,7 +16,7 @@ public class PlayerControl : MonoBehaviour
 	public AudioClip[] taunts;				// Array of clips for when the player taunts.
 	public float tauntProbability = 50f;	// Chance of a taunt happening.
 	public float tauntDelay = 1f;			// Delay for when the taunt should happen.
-
+	public bool isControlEnabled=true;
 
 	private int tauntIndex;					// The index of the taunts array indicating the most recent taunt.
 	private Transform groundCheck;			// A position marking where to check if the player is grounded.
@@ -57,6 +57,20 @@ public class PlayerControl : MonoBehaviour
 		// Cache the horizontal input.
 		float h = Input.GetAxis("Horizontal");
 
+
+
+		// If the input is moving the player right and the player is facing left...
+		if(h > 0 && !facingRight)
+			// ... flip the player.
+			Flip();
+		// Otherwise if the input is moving the player left and the player is facing right...
+		else if(h < 0 && facingRight)
+			// ... flip the player.
+			Flip();
+
+		if(!isControlEnabled)
+			return;
+
 		// The Speed animator parameter is set to the absolute value of the horizontal input.
 		anim.SetFloat("Speed", Mathf.Abs(h));
 
@@ -78,14 +92,6 @@ public class PlayerControl : MonoBehaviour
 			// ... set the player's velocity to the maxSpeed in the x axis.
 			rigidbody2D.velocity = new Vector2(Mathf.Sign(rigidbody2D.velocity.x) * maxSpeed, rigidbody2D.velocity.y);
 
-		// If the input is moving the player right and the player is facing left...
-		if(h > 0 && !facingRight)
-			// ... flip the player.
-			Flip();
-		// Otherwise if the input is moving the player left and the player is facing right...
-		else if(h < 0 && facingRight)
-			// ... flip the player.
-			Flip();
 
 		// If the player should jump...
 		if(jump)
