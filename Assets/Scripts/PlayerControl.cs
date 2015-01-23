@@ -22,7 +22,8 @@ public class PlayerControl : MonoBehaviour
 	private Transform groundCheck;			// A position marking where to check if the player is grounded.
 	private bool grounded = false;			// Whether or not the player is grounded.
 	private Animator anim;					// Reference to the player's animator component.
-	private float staticCount=0;
+	private float stackTimeCount=0;
+	private bool gaveInput=true;
 
 	void Awake()
 	{
@@ -57,15 +58,13 @@ public class PlayerControl : MonoBehaviour
 		// Cache the horizontal input.
 		float h = Input.GetAxis("Horizontal");
 
-
+		gaveInput= (h!=0);
 
 		// If the input is moving the player right and the player is facing left...
 		if(h > 0 && !facingRight)
-			// ... flip the player.
 			Flip();
 		// Otherwise if the input is moving the player left and the player is facing right...
 		else if(h < 0 && facingRight)
-			// ... flip the player.
 			Flip();
 
 		if(!isControlEnabled)
@@ -75,15 +74,16 @@ public class PlayerControl : MonoBehaviour
 		anim.SetFloat("Speed", Mathf.Abs(h));
 
 		if(Grounded){
-			staticCount=0;
+			stackTimeCount=0;
+			gaveInput=false;
 		}
 		else{
-			if(Mathf.Round(rigidbody2D.velocity.x)==0)
-				staticCount+=Time.deltaTime;
+			if(Mathf.Round(rigidbody2D.velocity.x)==0 && gaveInput)
+				stackTimeCount+=Time.deltaTime;
 		}
 
 		// If the player is changing direction (h has a different sign to velocity.x) or hasn't reached maxSpeed yet...
-		if(h * rigidbody2D.velocity.x < maxSpeed && staticCount<0.05f)
+		if(h * rigidbody2D.velocity.x < maxSpeed && stackTimeCount<0.05f)
 			// ... add a force to the player.
 			rigidbody2D.AddForce(Vector2.right * h * moveForce);
 
@@ -114,6 +114,9 @@ public class PlayerControl : MonoBehaviour
 	
 	void Flip ()
 	{
+		stackTimeCount=0;
+		gaveInput=false;
+
 		// Switch the way the player is labelled as facing.
 		facingRight = !facingRight;
 
