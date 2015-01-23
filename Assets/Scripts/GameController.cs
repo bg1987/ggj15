@@ -43,7 +43,7 @@ public class GameController : MonoBehaviour {
 	void DoControllMsg(){
 		tutorialState= TutorialState.ControlMsg;
 		player.controlState= PlayerControl.ControlStates.MoveInPlace;
-		Invoke("ShowControlMsg",5f);
+		Invoke("ShowControlMsg",4f);
 	}
 
 	void ShowControlMsg(){

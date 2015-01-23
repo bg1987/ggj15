@@ -14,25 +14,39 @@ public class MsgsPanel : MonoBehaviour {
 
 	public event Action onShowMsgsCompleteEvent;
 
-	void Start(){
+	void Awake(){
 		gameObject.SetActive(false);
 	}
 
 	public void AddMsg(string msg){
-		gameObject.SetActive(true);
-
 		_msgs.Add(msg);
 
 		if(!_isShowing){
 			msgTxt.text="";
 			_isShowing=true;
-			StopCoroutine("WriteTxtCoro");
-			StartCoroutine("WriteTxtCoro");
+			ShowNextMsg();
 		}
 
 	}
 
+	void ShowNextMsg(){
+		StopCoroutine("WriteTxtCoro");
+		gameObject.SetActive(true);
+		StartCoroutine("WriteTxtCoro");
+	}
+
 	IEnumerator WriteTxtCoro(){
+
+		if(_msgs.Count==0){
+			if(onShowMsgsCompleteEvent!=null)
+				onShowMsgsCompleteEvent();
+
+			_isShowing=false;
+
+			Hide();
+			yield return null;
+		}
+
 		while(_msgs.Count>0){
 			msgTxt.text="";
 			string msg = _msgs[0];
@@ -54,6 +68,12 @@ public class MsgsPanel : MonoBehaviour {
 
 		Hide();
 
+	}
+
+	void Update(){
+		if(Input.GetButtonDown("Jump") && _isShowing){
+			ShowNextMsg();
+		}
 	}
 
 	public void Hide(){
