@@ -16,7 +16,8 @@ public class GameController : MonoBehaviour {
 	}
 
 	void StartGame(){
-		DoWelcomeMsg();
+		//DoWelcomeMsg();
+		FreePlay();
 	}
 
 	void DoWelcomeMsg(){
