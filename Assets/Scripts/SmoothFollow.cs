@@ -9,6 +9,9 @@ public class SmoothFollow : MonoBehaviour
     public Transform target;
     public float maxRight = 0;
     public bool followY =false;
+
+    public bool StopMovement = false;
+
     // Update is called once per frame
     void Update()
     {
@@ -21,10 +24,18 @@ public class SmoothFollow : MonoBehaviour
             {
                 delta.y = 0;
             }
+
+            if (StopMovement)
+            {
+                delta = Vector3.zero;
+            }
+
             Vector3 destination = transform.position + delta;
             //destination.x = destination.x > maxRight ? maxRight : destination.x;
             transform.position = Vector3.SmoothDamp(transform.position, destination, ref velocity, dampTime);
         }
 
     }
+
+    
 }

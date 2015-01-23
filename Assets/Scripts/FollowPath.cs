@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class FollowPath : MonoBehaviour {
+
+    public bool StopOnPlayer = true;
     public enum FollowType
     {
         Lerp, MoveTowards
@@ -13,6 +15,7 @@ public class FollowPath : MonoBehaviour {
     public float speed = 1.0f;
     public float maxDistanceToGoal = 0.1f;
 
+    private float savedSpeed = 0f;
     private IEnumerator<Transform> _currentPoint;
 	// Use this for initialization
 	void Start () {
@@ -55,4 +58,25 @@ public class FollowPath : MonoBehaviour {
             _currentPoint.MoveNext();
         }
 	}
+
+    public void OnCollisionEnter2D(Collision2D coll)
+    {
+        if (coll.gameObject.tag == "Player" && StopOnPlayer)
+        {
+            savedSpeed = speed;
+            speed = 0;
+        }
+    }
+
+    public void OnCollisionExit2D(Collision2D coll)
+    {
+        if (coll.gameObject.tag == "Player" && StopOnPlayer)
+        {
+            speed = savedSpeed;
+        }
+    }
+
+
+
+
 }

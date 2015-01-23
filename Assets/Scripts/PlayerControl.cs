@@ -35,6 +35,11 @@ public class PlayerControl : MonoBehaviour
 		// Setting up references.
 		groundCheck = transform.Find("groundCheck");
 		anim = GetComponent<Animator>();
+        if (Camera.main.GetComponent<GameController>().ShowTutorial)
+	    {
+            transform.position = new Vector3(5, 1, 0);
+	    }
+        
 	}
 
 

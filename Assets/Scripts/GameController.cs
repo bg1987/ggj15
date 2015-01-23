@@ -6,6 +6,7 @@ public class GameController : MonoBehaviour {
 	public PlayerControl player;
 	public MsgsPanel msgsPanel;
     public CheckpointManager checkpoint;
+    public bool ShowTutorial = false;
 
 	enum TutorialState {WelcomeMsg,ControlMsg,Play}
 	TutorialState tutorialState = TutorialState.WelcomeMsg;
@@ -17,8 +18,14 @@ public class GameController : MonoBehaviour {
 	}
 
 	void StartGame(){
-		//DoWelcomeMsg();
-		FreePlay();
+        if (ShowTutorial)
+        {
+		    DoWelcomeMsg();
+        }
+        else
+        {
+            FreePlay();
+        }
 	}
 
 	void DoWelcomeMsg(){
