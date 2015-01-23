@@ -14,11 +14,11 @@ public class GameController : MonoBehaviour {
 	void Start () {
 		msgsPanel.onShowMsgsCompleteEvent+= OnShowMsgsComplete;
 		StartGame();
-
 	}
 
 	void StartGame(){
-		DoWelcomeMsg();
+		//DoWelcomeMsg();
+		FreePlay();
 	}
 
 	void DoWelcomeMsg(){
@@ -44,7 +44,7 @@ public class GameController : MonoBehaviour {
 	void DoControllMsg(){
 		tutorialState= TutorialState.ControlMsg;
 		player.controlState= PlayerControl.ControlStates.MoveInPlace;
-		Invoke("ShowControlMsg",5f);
+		Invoke("ShowControlMsg",4f);
 	}
 
 	void ShowControlMsg(){
