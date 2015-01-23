@@ -15,7 +15,7 @@ GameObject:
   - 58: {fileID: 5892690}
   m_Layer: 0
   m_Name: Character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57,7 +57,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 192690}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .529999971, y: 1.02999997, z: 0}
+  m_LocalPosition: {x: 5.32000017, y: 1.02999997, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 492692}
@@ -95,8 +95,8 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 192690}
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: .0500000007
+  m_LinearDrag: 1
+  m_AngularDrag: .449999988
   m_GravityScale: 2.5
   m_FixedAngle: 1
   m_IsKinematic: 0
@@ -152,6 +152,8 @@ MonoBehaviour:
   taunts: []
   tauntProbability: 50
   tauntDelay: 1
+  isControlEnabled: 1
+  controlState: 0
 --- !u!212 &21292690
 SpriteRenderer:
   m_ObjectHideFlags: 1
