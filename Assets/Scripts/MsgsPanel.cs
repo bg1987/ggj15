@@ -14,7 +14,7 @@ public class MsgsPanel : MonoBehaviour {
 
 	public event Action onShowMsgsCompleteEvent;
 
-	void Start(){
+	void Awake(){
 		gameObject.SetActive(false);
 	}
 
