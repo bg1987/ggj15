@@ -25,6 +25,11 @@ public class PlayerControl : MonoBehaviour
 	private float stackTimeCount=0;
 	private bool gaveInput=true;
 
+
+	public enum ControlStates{None,MoveInPlace,Free}
+
+	public ControlStates controlState = ControlStates.None;
+
 	void Awake()
 	{
 		// Setting up references.
@@ -55,6 +60,10 @@ public class PlayerControl : MonoBehaviour
 
 	void FixedUpdate ()
 	{
+
+		if(controlState == ControlStates.None)
+			return;
+
 		// Cache the horizontal input.
 		float h = Input.GetAxis("Horizontal");
 
@@ -67,7 +76,7 @@ public class PlayerControl : MonoBehaviour
 		else if(h < 0 && facingRight)
 			Flip();
 
-		if(!isControlEnabled)
+		if(controlState == ControlStates.MoveInPlace)
 			return;
 
 		// The Speed animator parameter is set to the absolute value of the horizontal input.

@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System;
 
 public class MsgsPanel : MonoBehaviour {
 
@@ -10,6 +11,8 @@ public class MsgsPanel : MonoBehaviour {
 	List<string> _msgs = new List<string>();
 
 	bool _isShowing=false;
+
+	public event Action onShowMsgsCompleteEvent;
 
 	void Start(){
 		gameObject.SetActive(false);
@@ -23,6 +26,7 @@ public class MsgsPanel : MonoBehaviour {
 		if(!_isShowing){
 			msgTxt.text="";
 			_isShowing=true;
+			StopCoroutine("WriteTxtCoro");
 			StartCoroutine("WriteTxtCoro");
 		}
 
@@ -38,9 +42,18 @@ public class MsgsPanel : MonoBehaviour {
 				
 				yield return new WaitForSeconds(0.08f);
 			}
-			yield return new WaitForSeconds(2f);
+			if(_msgs.Count>0)
+				yield return new WaitForSeconds(1.5f);
 		}
 		_isShowing=false;
+
+		if(onShowMsgsCompleteEvent!=null)
+			onShowMsgsCompleteEvent();
+
+		yield return new WaitForSeconds(2f);
+
+		Hide();
+
 	}
 
 	public void Hide(){
