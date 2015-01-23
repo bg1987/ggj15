@@ -22,7 +22,7 @@ public class PlayerControl : MonoBehaviour
 	private Transform groundCheck;			// A position marking where to check if the player is grounded.
 	private bool grounded = false;			// Whether or not the player is grounded.
 	private Animator anim;					// Reference to the player's animator component.
-
+	private float staticCount=0;
 
 	void Awake()
 	{
@@ -60,8 +60,16 @@ public class PlayerControl : MonoBehaviour
 		// The Speed animator parameter is set to the absolute value of the horizontal input.
 		anim.SetFloat("Speed", Mathf.Abs(h));
 
+		if(Grounded){
+			staticCount=0;
+		}
+		else{
+			if(Mathf.Round(rigidbody2D.velocity.x)==0)
+				staticCount+=Time.deltaTime;
+		}
+
 		// If the player is changing direction (h has a different sign to velocity.x) or hasn't reached maxSpeed yet...
-		if(h * rigidbody2D.velocity.x < maxSpeed)
+		if(h * rigidbody2D.velocity.x < maxSpeed && staticCount<0.05f)
 			// ... add a force to the player.
 			rigidbody2D.AddForce(Vector2.right * h * moveForce);
 
