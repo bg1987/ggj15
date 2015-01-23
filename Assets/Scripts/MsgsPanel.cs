@@ -9,7 +9,7 @@ public class MsgsPanel : MonoBehaviour {
 	public Text msgTxt;
 
 	List<string> _msgs = new List<string>();
-
+	string _currentMsg="";
 	bool _isShowing=false;
 
 	public event Action onShowMsgsCompleteEvent;
@@ -30,6 +30,14 @@ public class MsgsPanel : MonoBehaviour {
 	}
 
 	void ShowNextMsg(){
+
+		if(_msgs.Count==0){
+			if(onShowMsgsCompleteEvent!=null)
+				onShowMsgsCompleteEvent();
+			_isShowing=false;
+			Hide();
+		}
+
 		StopCoroutine("WriteTxtCoro");
 		gameObject.SetActive(true);
 		StartCoroutine("WriteTxtCoro");
@@ -37,22 +45,14 @@ public class MsgsPanel : MonoBehaviour {
 
 	IEnumerator WriteTxtCoro(){
 
-		if(_msgs.Count==0){
-			if(onShowMsgsCompleteEvent!=null)
-				onShowMsgsCompleteEvent();
 
-			_isShowing=false;
-
-			Hide();
-			yield return null;
-		}
 
 		while(_msgs.Count>0){
 			msgTxt.text="";
-			string msg = _msgs[0];
+			_currentMsg = _msgs[0];
 			_msgs.RemoveAt(0);
-			for (int i = 0; i < msg.Length; i++) {
-				msgTxt.text+=msg[i];
+			for (int i = 0; i < _currentMsg.Length; i++) {
+				msgTxt.text+=_currentMsg[i];
 				
 				yield return new WaitForSeconds(0.08f);
 			}
@@ -72,7 +72,12 @@ public class MsgsPanel : MonoBehaviour {
 
 	void Update(){
 		if(Input.GetButtonDown("Jump") && _isShowing){
-			ShowNextMsg();
+			if(_currentMsg!=""){
+				msgTxt.text=_currentMsg;
+				_currentMsg="";
+			}
+			else
+				ShowNextMsg();
 		}
 	}
 
