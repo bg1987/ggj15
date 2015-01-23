@@ -1,0 +1,691 @@
+fileFormatVersion: 2
+guid: 500b496bb08b44e0aae2c546ba970844
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: ninjagaiden2sheet1_0
+    21300002: ninjagaiden2sheet1_1
+    21300004: ninjagaiden2sheet1_2
+    21300006: ninjagaiden2sheet1_3
+    21300008: ninjagaiden2sheet1_4
+    21300010: ninjagaiden2sheet1_5
+    21300012: ninjagaiden2sheet1_6
+    21300014: ninjagaiden2sheet1_7
+    21300016: ninjagaiden2sheet1_8
+    21300018: ninjagaiden2sheet1_9
+    21300020: ninjagaiden2sheet1_10
+    21300022: ninjagaiden2sheet1_11
+    21300024: ninjagaiden2sheet1_12
+    21300026: ninjagaiden2sheet1_13
+    21300028: ninjagaiden2sheet1_14
+    21300030: ninjagaiden2sheet1_15
+    21300032: ninjagaiden2sheet1_16
+    21300034: ninjagaiden2sheet1_17
+    21300036: ninjagaiden2sheet1_18
+    21300038: ninjagaiden2sheet1_19
+    21300040: ninjagaiden2sheet1_20
+    21300042: ninjagaiden2sheet1_21
+    21300044: ninjagaiden2sheet1_22
+    21300046: ninjagaiden2sheet1_23
+    21300048: ninjagaiden2sheet1_24
+    21300050: ninjagaiden2sheet1_25
+    21300052: ninjagaiden2sheet1_26
+    21300054: ninjagaiden2sheet1_27
+    21300056: ninjagaiden2sheet1_28
+    21300058: ninjagaiden2sheet1_29
+    21300060: ninjagaiden2sheet1_30
+    21300062: ninjagaiden2sheet1_31
+    21300064: ninjagaiden2sheet1_32
+    21300066: ninjagaiden2sheet1_33
+    21300068: ninjagaiden2sheet1_34
+    21300070: ninjagaiden2sheet1_35
+    21300072: ninjagaiden2sheet1_36
+    21300074: ninjagaiden2sheet1_37
+    21300076: ninjagaiden2sheet1_38
+    21300078: ninjagaiden2sheet1_39
+    21300080: ninjagaiden2sheet1_40
+    21300082: ninjagaiden2sheet1_41
+    21300084: ninjagaiden2sheet1_42
+    21300086: ninjagaiden2sheet1_43
+    21300088: ninjagaiden2sheet1_44
+    21300090: ninjagaiden2sheet1_45
+    21300092: ninjagaiden2sheet1_46
+    21300094: ninjagaiden2sheet1_47
+    21300096: ninjagaiden2sheet1_48
+    21300098: ninjagaiden2sheet1_49
+    21300100: ninjagaiden2sheet1_50
+    21300102: ninjagaiden2sheet1_51
+    21300104: ninjagaiden2sheet1_52
+    21300106: ninjagaiden2sheet1_53
+    21300108: ninjagaiden2sheet1_54
+    21300110: ninjagaiden2sheet1_55
+    21300112: ninjagaiden2sheet1_56
+    21300114: ninjagaiden2sheet1_57
+    21300116: stand
+    21300118: run1
+    21300120: run2
+    21300122: run3
+    21300124: Jump1
+    21300126: Jump2
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 20
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: stand
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 202
+        width: 17
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_1
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 202
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_2
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 202
+        width: 40
+        height: 29
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_3
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 202
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_4
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 202
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_5
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 202
+        width: 26
+        height: 29
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_6
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 202
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_7
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 202
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_8
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 202
+        width: 39
+        height: 23
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_9
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 202
+        width: 28
+        height: 23
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_10
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 176
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_11
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 171
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_12
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 176
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_13
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 171
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_14
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 164
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_15
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 164
+        width: 38
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_16
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 164
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Jump1
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 164
+        width: 16
+        height: 31
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Jump2
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 164
+        width: 24
+        height: 31
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_19
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 164
+        width: 21
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_20
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 124
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_21
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 126
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_22
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 125
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_23
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 125
+        width: 21
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_24
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 125
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_25
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 125
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: run1
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 125
+        width: 20
+        height: 31
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: run2
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 125
+        width: 22
+        height: 31
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: run3
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 125
+        width: 20
+        height: 31
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_29
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 82
+        width: 17
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_30
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 82
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_31
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 82
+        width: 40
+        height: 29
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_32
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 82
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_33
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 82
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_34
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 82
+        width: 26
+        height: 29
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_35
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 82
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_36
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 82
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_37
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 82
+        width: 39
+        height: 23
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_38
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 82
+        width: 28
+        height: 23
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_39
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 56
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_40
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 51
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_41
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 56
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_42
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 51
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_43
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 44
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_44
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 44
+        width: 38
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_45
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 44
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_46
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 44
+        width: 16
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_47
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 44
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_48
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 44
+        width: 21
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_49
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 4
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_50
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 6
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_51
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 5
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_52
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 5
+        width: 21
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_53
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 5
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_54
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 5
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_55
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 5
+        width: 20
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_56
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 5
+        width: 22
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ninjagaiden2sheet1_57
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 5
+        width: 20
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
