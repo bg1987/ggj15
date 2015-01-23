@@ -13,7 +13,6 @@ public class GameController : MonoBehaviour {
 	void Start () {
 		msgsPanel.onShowMsgsCompleteEvent+= OnShowMsgsComplete;
 		StartGame();
-
 	}
 
 	void StartGame(){
