@@ -14,6 +14,11 @@ public class MsgsPanel : MonoBehaviour {
 
 	public event Action onShowMsgsCompleteEvent;
 
+
+    public float letterTypeTime = 0.08f;
+    public float TimeBetweenMessages = 1.5f;
+    public float TimeForLastMessage = 1.5f;
+
 	void Awake(){
 		gameObject.SetActive(false);
 	}
@@ -54,17 +59,17 @@ public class MsgsPanel : MonoBehaviour {
 			for (int i = 0; i < _currentMsg.Length; i++) {
 				msgTxt.text+=_currentMsg[i];
 				
-				yield return new WaitForSeconds(0.08f);
+				yield return new WaitForSeconds(letterTypeTime);
 			}
 			if(_msgs.Count>0)
-				yield return new WaitForSeconds(1.5f);
+				yield return new WaitForSeconds(TimeBetweenMessages);
 		}
 		_isShowing=false;
 
 		if(onShowMsgsCompleteEvent!=null)
 			onShowMsgsCompleteEvent();
 
-		yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(TimeForLastMessage);
 
 		Hide();
 
@@ -80,6 +85,14 @@ public class MsgsPanel : MonoBehaviour {
 				ShowNextMsg();
 		}
 	}
+
+    public void Reset()
+    {
+        StopCoroutine("WriteTxtCoro");
+        _isShowing = false;
+        _msgs.Clear();
+        Hide();
+    }
 
 	public void Hide(){
 		gameObject.SetActive(false);
