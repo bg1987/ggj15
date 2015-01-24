@@ -151,7 +151,7 @@ public class PlayerControl : MonoBehaviour
 		}
 
 
-        Debug.Log("Velo " + rigidbody2D.velocity);
+        //Debug.Log("Velo " + rigidbody2D.velocity);
         if (rigidbody2D.velocity.y > jumpForceCap)
         {
             jumpCapReached = true;

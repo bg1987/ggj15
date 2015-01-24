@@ -13,6 +13,8 @@ GameObject:
   - 50: {fileID: 5092690}
   - 114: {fileID: 11492690}
   - 58: {fileID: 5892690}
+  - 114: {fileID: 11428412}
+  - 114: {fileID: 11428414}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -57,7 +59,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 192690}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.32000017, y: 1.02999997, z: 0}
+  m_LocalPosition: {x: -37.7700005, y: 1.24000001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 492692}
@@ -129,6 +131,29 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11428412
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0db3060d0db30414a9548d01b32ec83f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11428414
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2cdcb6b22c674f6383a164c93dc0a55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  msgsPanel: {fileID: 0}
 --- !u!114 &11492690
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -148,7 +173,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: dafa1cc4eb8714341a7c595abfba35d8, type: 3}
   - {fileID: 8300000, guid: fc55d077383484ac0ad66aa17fcd746f, type: 3}
   - {fileID: 8300000, guid: 50a8d8a939a0f4e77a0dac6ecd2e582b, type: 3}
-  jumpForce: 500
+  jumpForce: 400
+  jumpIncrement: 40
+  jumpForceCap: 9
   taunts: []
   tauntProbability: 50
   tauntDelay: 1
