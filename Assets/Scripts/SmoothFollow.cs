@@ -9,7 +9,7 @@ public class SmoothFollow : MonoBehaviour
     public Transform target;
     public float maxRight = 0;
     public bool followY =false;
-
+    public bool canMoveBack = false;
     public bool StopMovement = false;
 
     // Update is called once per frame
@@ -19,7 +19,12 @@ public class SmoothFollow : MonoBehaviour
         {
             Vector3 point = camera.WorldToViewportPoint(target.position);
             Vector3 delta = target.position - camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, point.z)); //(new Vector3(0.5, 0.5, point.z));
-            delta.x = delta.x > 0 ? 0 : delta.x;
+
+            if (!canMoveBack)
+            {
+                delta.x = delta.x > 0 ? 0 : delta.x;
+            }
+            
             if (!followY)
             {
                 delta.y = 0;

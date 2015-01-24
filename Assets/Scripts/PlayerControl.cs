@@ -13,10 +13,15 @@ public class PlayerControl : MonoBehaviour
 	public float maxSpeed = 5f;				// The fastest the player can travel in the x axis.
 	public AudioClip[] jumpClips;			// Array of clips for when the player jumps.
 	public float jumpForce = 1000f;			// Amount of force added when the player jumps.
-	public AudioClip[] taunts;				// Array of clips for when the player taunts.
+    public float jumpIncrement = 20f;        //Jump higher the longer you hold.
+    public float jumpForceCap = 1500;        //But not too high.
+	
+    public AudioClip[] taunts;				// Array of clips for when the player taunts.
 	public float tauntProbability = 50f;	// Chance of a taunt happening.
 	public float tauntDelay = 1f;			// Delay for when the taunt should happen.
 	public bool isControlEnabled=true;
+
+
 
 	private int tauntIndex;					// The index of the taunts array indicating the most recent taunt.
 	private Transform groundCheck;			// A position marking where to check if the player is grounded.
@@ -25,7 +30,9 @@ public class PlayerControl : MonoBehaviour
 	private float stackTimeCount=0;
 	private bool gaveInput=true;
 
-
+    private bool jumpCapReached = false;
+    private bool extraJumpForce = false;
+    
 	public enum ControlStates{None,MoveInPlace,Free}
 
 	public ControlStates controlState = ControlStates.None;
@@ -46,11 +53,25 @@ public class PlayerControl : MonoBehaviour
 	void Update()
 	{
 		// The player is grounded if a linecast to the groundcheck position hits anything on the ground layer.
-		Grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));  
+		Grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
+        
+        //if you land on the ground the jumpCap resets.
+        if (grounded)
+        {
+            jumpCapReached = false;
+        }
 
 		// If the jump button is pressed and the player is grounded then the player should jump.
 		if(Input.GetButtonDown("Jump") && Grounded)
 			jump = true;
+
+
+        if (Input.GetButton("Jump") && !Grounded && !jumpCapReached) // && !Grounded)
+        {
+            Debug.Log("Adding force");
+            extraJumpForce = true;
+        }
+
 	}
 
 	public bool Grounded {
@@ -123,6 +144,19 @@ public class PlayerControl : MonoBehaviour
 			// Make sure the player can't jump again until the jump conditions from Update are satisfied.
 			jump = false;
 		}
+
+
+        Debug.Log("Velo " + rigidbody2D.velocity);
+        if (rigidbody2D.velocity.y > jumpForceCap)
+        {
+            jumpCapReached = true;
+        }
+        //if were still junmping
+        if (!jumpCapReached && extraJumpForce && rigidbody2D.velocity.y <= jumpForceCap && rigidbody2D.velocity.y > 0)
+        {
+            rigidbody2D.AddForce(new Vector2(0f,jumpIncrement));
+            extraJumpForce = false;
+        }
 	}
 	
 	
