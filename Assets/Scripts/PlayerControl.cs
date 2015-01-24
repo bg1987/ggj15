@@ -72,6 +72,11 @@ public class PlayerControl : MonoBehaviour
             extraJumpForce = true;
         }
 
+        if (Input.GetButtonUp("Jump"))
+        {
+            jumpCapReached = true;
+        }
+
 	}
 
 	public bool Grounded {
