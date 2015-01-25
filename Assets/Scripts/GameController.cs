@@ -3,14 +3,19 @@ using System.Collections;
 
 public class GameController : MonoBehaviour {
 
+
+    public GameObject TitleScreen;
+
 	public PlayerControl player;
 	public MsgsPanel msgsPanel;
     public CheckpointManager checkpoint;
     public bool ShowTutorial = false;
 
+    private bool startGame = false;
+
 	enum TutorialState {WelcomeMsg,ControlMsg,Play}
 	TutorialState tutorialState = TutorialState.WelcomeMsg;
-
+    
 	// Use this for initialization
 	void Start () {
 		msgsPanel.onShowMsgsCompleteEvent+= OnShowMsgsComplete;
@@ -20,7 +25,9 @@ public class GameController : MonoBehaviour {
 	void StartGame(){
         if (ShowTutorial)
         {
-		    DoWelcomeMsg();
+            TitleScreen.SetActive(true);
+            StartCoroutine(TitleCoro());
+		    //DoWelcomeMsg();
         }
         else
         {
@@ -30,9 +37,9 @@ public class GameController : MonoBehaviour {
 
 	void DoWelcomeMsg(){
 		tutorialState = TutorialState.WelcomeMsg;
-		msgsPanel.AddMsg("Welcome to super Ivan cousions");
-		msgsPanel.AddMsg("I am ivan");
-		msgsPanel.AddMsg("Press left and right to move left and right");
+        msgsPanel.AddMsg("Hello, Welcome to SUPER IVAN COUSINS! By Ivan.");
+        msgsPanel.AddMsg("This is Ivan, top game developer");
+        msgsPanel.AddMsg("Click left and right arrows to move left and right.");
 	}
 
 	void OnShowMsgsComplete ()
@@ -55,9 +62,10 @@ public class GameController : MonoBehaviour {
 	}
 
 	void ShowControlMsg(){
-		msgsPanel.AddMsg("ho, sorry, please let me fix that...");
-		msgsPanel.AddMsg("coding...coding...coding...redbull...coding...comit...publish...");
-		msgsPanel.AddMsg("ok try now");
+        msgsPanel.AddMsg("Oh, Im sorry, Ivan fix.");
+        msgsPanel.AddMsg("coding... coding... coding... redull... commit... publish...");
+        msgsPanel.AddMsg("Ok, Now working.");
+        msgsPanel.AddMsg("Follow Sign please.");
 	}
 
 	void FreePlay ()
@@ -77,7 +85,20 @@ public class GameController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-
+        if (Input.GetButton("Jump"))
+        {
+            startGame = true;
+        }
 
 	}
+
+    IEnumerator TitleCoro()
+    {
+        while (!startGame)
+        {
+            yield return null;
+        }
+        TitleScreen.SetActive(false);
+        DoWelcomeMsg();
+    }
 }

@@ -30,7 +30,7 @@ public class PlayerStuck : MonoBehaviour {
 			_isStack=false;
 		}
 
-		if(_timeCount>5){
+		if(_timeCount>15){
 			_timeCount=0;
 			_isStack=true;
 			msgsPanel.Reset();
@@ -38,8 +38,8 @@ public class PlayerStuck : MonoBehaviour {
 		}
 
 		if(_isStack){
+			_timeCount=0;
 			if(Input.GetKey(KeyCode.R)){
-				_timeCount=0;
 				_isStack=false;
 				msgsPanel.Reset();
 				Camera.main.GetComponent<GameController>().KillPlayer();

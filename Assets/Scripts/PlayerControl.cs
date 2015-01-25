@@ -32,7 +32,7 @@ public class PlayerControl : MonoBehaviour
 
     private bool jumpCapReached = false;
     private bool extraJumpForce = false;
-    
+    private bool suicide = false;
 	public enum ControlStates{None,MoveInPlace,Free}
 
 	public ControlStates controlState = ControlStates.None;
@@ -77,6 +77,11 @@ public class PlayerControl : MonoBehaviour
             jumpCapReached = true;
         }
 
+        if (Input.GetKey(KeyCode.R))
+        {
+            suicide = true;
+        }
+
 	}
 
 	public bool Grounded {
@@ -94,6 +99,12 @@ public class PlayerControl : MonoBehaviour
 
 		if(controlState == ControlStates.None)
 			return;
+
+        if (suicide)
+        {
+            Camera.main.GetComponent<GameController>().KillPlayer();
+            suicide = false;
+        }
 
 		// Cache the horizontal input.
 		float h = Input.GetAxis("Horizontal");
